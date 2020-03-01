@@ -1,0 +1,98 @@
+--- 
+pipeline:
+    package-name: 56877_56878_NJAIN_DUMMY_PKG
+    package-label: 20200423
+    package-status: dev
+    build-detail:
+        build-suite: Platforms
+        build-developer: Developer_1
+        build-reviewer: Reviewer_1
+        build-tester: Tester_1
+        build-type: Promote
+        build-id: 56878
+        build-card: PLAT-456
+    build-instructions:
+        table-copy:
+            - table_1
+            - table_2
+            - table_3
+        table-drop:
+            - table_4
+            - table_5
+        table-drop-recreate:
+            - table_6
+            - table_7
+        table-upgrade:
+        file-import: /apps/dev/myfile.txt
+        patch-execution:
+            language: python
+            code: print("Hello World")
+            expected-output: Hello World
+            compiler-warning: no
+        additional-instructions: false
+    build-deployment:
+        dev-region-deployment:
+            deployment-date: 2020-04-21 
+            environments:
+                pit: true
+                wsd: true
+            testing:
+                sanity: true
+                regression: false
+        int-region-deployment:
+            deployment-date: 2020-05-01 
+            environments: 
+                int: false
+                qa1: false
+                qa2: false
+                qa3: false
+                qa4: false
+                qa5: false
+                qa6: false
+                qa7: false
+                qa8: false
+                qa9: false
+            testing:
+                sanity: true
+                regression: false
+            web-caching: false
+        sit-region-deployment:
+            deployment-date: 2020-05-12
+            environments:
+                sit: true
+                zin: true
+                ast: true
+                wsr: true
+            testing:
+                sanity: true
+                regression: true    
+            web-caching: true
+        rel-region-deployment: 
+            deployment-date: 2020-05-15
+            environments:
+                rmt: true
+                rip: true
+            testing:
+                sanity: false
+                regression: false
+                business: true
+                it: true
+            web-caching: true
+        stg-region-deployment:
+            deployment-date: 2020-05-19 
+            environments:
+                stg: true
+                wss: true
+            testing:
+                sanity: true
+                regression: true
+            web-caching: true
+        pro-region-deployment:
+            deployment-date: 2020-05-21
+            environments:
+                pro: yes
+                ov2: yes
+            testing:
+                sanity: yes
+                regression: no           
+            web-caching: yes
